@@ -12,7 +12,10 @@ namespace FunctionApp50
 {
     public  class Function1
     {
-        public Function1() { }
+        private readonly ICrud _crud;
+        public Function1(ICrud crud) {
+            _crud = crud;
+        }
 
         [FunctionName("Function1")]
         public  async Task<IActionResult> Run(
